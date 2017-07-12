@@ -7,12 +7,11 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'javac *.java'
+        sh 'mvn -f ./my-app/pom.xml package'
         }
     }
     stage('run') {
       steps {
-        sh 'java HelloWorld'
 		echo env.JOB_NAME
       }
     }
