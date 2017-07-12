@@ -7,15 +7,13 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'javac *.java'
 		sh 'mvn -f ./my-app/pom.xml package'
-		build '/TestJava_NormalJob/'
-        }
+		}
     }
     stage('run') {
       steps {
         sh 'java HelloWorld'
-		echo env.JOB_NAME
+		sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
       }
     }
   }
