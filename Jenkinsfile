@@ -4,7 +4,7 @@
 pipeline {
   agent any
 	tools {
-        maven 'MAVENAut'
+        maven 'MAVENLocal'
         }
   stages {
     stage('build') {
