@@ -4,7 +4,7 @@
 pipeline {
   agent any
 	tools {
-        maven 'MAVENLocal'
+        maven 'MAVENAut'
         }
   stages {
     stage('build') {
@@ -15,6 +15,7 @@ pipeline {
     stage('run') {
       steps {
 		echo env.JOB_NAME
+		sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
       }
     }
   }
