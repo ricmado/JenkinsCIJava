@@ -3,7 +3,9 @@
 
 pipeline {
   agent any
-
+	tools {
+        maven 'MAVENAut'
+        }
   stages {
     stage('build') {
       steps {
