@@ -15,7 +15,7 @@ pipeline {
     stage('run') {
       steps {
 		echo env.JOB_NAME
-		sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
+		sh 'java -cp my-app/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App '
       }
     }
   }
